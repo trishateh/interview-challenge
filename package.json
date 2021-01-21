@@ -1,0 +1,58 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "description": "Public Pages for Edge & Node",
+  "main": "index.js",
+  "scripts": {
+    "dev": "source .env && next -p 4000",
+    "build": "rm -rf out .next && next build",
+    "export": "next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edgeandnode/interview-challenge"
+  },
+  "author": "Nena Djaja",
+  "license": "ISC",
+  "keywords": [],
+  "homepage": "",
+  "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
+    "@babel/preset-react": "^7.12.10",
+    "@next/bundle-analyzer": "^10.0.5",
+    "@theme-ui/components": "^0.3.5",
+    "apollo-boost": "^0.4.9",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.4.0",
+    "next": "10.0.5",
+    "next-manifest": "^3.0.1",
+    "next-seo": "^4.17.0",
+    "node-sass": "^5.0.0",
+    "raw-loader": "^4.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sitemap": "^6.3.5",
+    "styled-jsx-plugin-sass": "^1.0.0",
+    "theme-ui": "^0.6.0-alpha.4"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.5.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "yarn build"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json}": [
+      "prettier --write --config ./.prettierrc"
+    ]
+  }
+}
