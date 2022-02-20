@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 
 import { ThemeProvider } from 'theme-ui'
 import theme from '../theme'
-
 import Layout from '../components/Layout'
 
 const MyApp = (props) => {
@@ -23,6 +22,10 @@ const MyApp = (props) => {
     <>
       <ThemeProvider theme={theme}>
         <Layout>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+          />
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>
